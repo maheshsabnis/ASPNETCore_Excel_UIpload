@@ -1,0 +1,22 @@
+Create Database Servicing;
+
+use Servicing;
+
+Create Table CustomerResponseDetails(
+
+  ResponseId int IDENTITY (1,1) Primary Key,
+  ServiceEngineerName varchar(200) Not Null,
+  CustomerName varchar(200) Not Null,
+  Address varchar(500) Not null,
+  City varchar(100) Not null,
+  ComplaintType varchar(100) Not Null, 
+  DeviceName varchar(100) Not Null,
+  ComplaintDate datetime Not Null,
+  VisitDate datetime Not Null,
+  ComplaintDetails varchar(1000),
+  RepairDetails varchar(1000),
+  ResolveDate datetime not null,
+  Fees DECIMAL not null,
+  UploadDate DATETIME not null  
+);
+

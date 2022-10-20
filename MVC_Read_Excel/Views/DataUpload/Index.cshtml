@@ -1,0 +1,108 @@
+﻿@model IEnumerable<MVC_Read_Excel.Models.CustomerResponseDetail>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    ResponseId
+                </th>
+                <th>
+                    ServiceEngineerName
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    ComplaintType
+                </th>
+                <th>
+                    DeviceName
+                </th>
+                <th>
+                    Complainthate
+                </th>
+                <th>
+                    Visithate
+                </th>
+                <th>
+                    Complainthetails
+                </th>
+                <th>
+                    RepairDetails
+                </th>
+                <th>
+                    ResolveDate
+                </th>
+                <th>
+                    Fees
+                </th>
+                <th>
+                    UploadDate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var details in Model)
+            {
+               <tr>
+                   <td>
+                       @details.ResponseId
+                   </td>
+                   <td>
+                       @details.ServiceEngineerName
+                   </td>
+                   <td>
+                       @details.CustomerName
+                   </td>
+                   <td>
+                       @details.Address
+                   </td>
+                   <td>
+                       @details.City
+                   </td>
+                   <td>
+                       @details.ComplaintType
+                   </td>
+                   <td>
+                       @details.ComplaintDate
+                   </td>
+                   <td>
+                       @details.VisitDate
+                   </td>
+                   <td>
+                       @details.ComplaintDetails
+                   </td>
+                   <td>
+                       @details.RepairDetails
+                   </td>
+                   <td>
+                       @details.ResolveDate
+                   </td>
+                   <td>
+                       @details.Fees
+                   </td>
+                   <td>
+                       @details.UploadDate
+                   </td>
+                   
+
+               </tr>         
+            }
+        </tbody>
+    </table>
+</div> 
+
+<div class="text-center">
+    <form asp-controller="DataUpload" asp-action="Index" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+    </form>
+</div>
+
